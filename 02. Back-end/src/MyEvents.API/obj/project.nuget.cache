@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "HOrTlDIls1GHsCf5jSGzDuio6m+3t877GDD/C63KPsec5zMkvxppFJ/BeGDBfKos7RYPJiiFW1xZjxySAkFTjw==",
+  "success": true,
+  "projectFilePath": "C:\\Desenvolvimento\\Desenvolvimento\\Projetos\\MyEvents\\02. Back-end\\src\\MyEvents.API\\MyEvents.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
