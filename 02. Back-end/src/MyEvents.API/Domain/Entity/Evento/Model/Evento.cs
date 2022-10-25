@@ -1,7 +1,10 @@
-﻿namespace MyEvents.API.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MyEvents.API.Domain.Entity.Model
 {
     public class Evento
     {
+        [Key]
         public uint IdEvento { get; set; }
         public string Local { get; set; }
         public string DataEvento { get; set; }
