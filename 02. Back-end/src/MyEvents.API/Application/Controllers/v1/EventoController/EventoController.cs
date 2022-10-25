@@ -1,20 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyEvents.API.Domain.Entity.Model;
+using MyEvents.API.Services;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace MyEvents.API.Controllers.v1
+namespace MyEvents.API.Application.Controllers.v1
 {
     [ApiController]
     [ApiVersion("1")]
     [Route("api/v{version:apiVersion}/[controller]")]
     public class EventoController : ControllerBase
     {
-        public EventoController()
+        private readonly IEventoService _eventoService;
+
+        public EventoController(IEventoService eventoService)
         {
+            _eventoService = eventoService;
         }
 
         [HttpGet]
-        public string Get()
+        public async Task<IQueryable<Evento>> Get()
         {
-            return "Retonar Get";
+            var evento = await _eventoService.BuscarTodosEventos();
+            return evento;
         }
 
         [HttpGet("{id}")]
