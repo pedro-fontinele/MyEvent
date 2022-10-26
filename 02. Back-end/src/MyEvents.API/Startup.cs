@@ -32,6 +32,10 @@ namespace MyEvents.API
             services.AddControllers();
             #endregion
 
+            #region Cors
+            services.AddCors();
+            #endregion
+
             #region ServiceConfiguration
             services.AddServiceConfiguration();
             #endregion
@@ -71,6 +75,10 @@ namespace MyEvents.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(cors => cors.AllowAnyHeader()
+                                    .AllowAnyMethod()
+                                    .AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {
