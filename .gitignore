@@ -1278,6 +1278,7 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+*.suo
 
 # OpenCover UI analysis results
 OpenCover/
@@ -1299,8 +1300,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-/Lojas Ecommerce/Consinco.Store/core
-/Api Restful Core/Api Restful Core/.config/dotnet-tools.json
 
 # Custom
 !gerar_publicacoes.bat
@@ -1314,6 +1313,7 @@ _Pipeline/*
 # /PainelIntegracaoAPI/src/PainelIntegracaoAPI.Infra.SqlServer/Migrations/*
 
 # # Ignorar
-# !PainelIntegracaoAPI/src/PainelIntegracaoAPI.Aplicacao/Release/
-# !ServicoIntegrador/IntegradorEcommerce.Worker/Release
-# !PainelIntegracaoFrontEnd/painel-integracao-front-end/dist/nginx/html/Release
+.angular/
+.vscode/
+.vs/MyEvents.API/DesignTimeBuild
+.vs/MyEvents.API/DesignTimeBuild/v16

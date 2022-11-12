@@ -3,17 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EventosComponent } from './application/eventos/eventos.component';
-import { PalestrantesComponent } from './application/palestrantes/palestrantes.component';
+import { EventsComponent } from './application/events/events.component';
+import { SpeakersComponent } from './application/speakers/speakers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './navegation/element/nav-bar/nav-bar.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventosComponent,
-    PalestrantesComponent,
+    EventsComponent,
+    SpeakersComponent,
     NavBarComponent
   ],
   imports: [
@@ -21,7 +22,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

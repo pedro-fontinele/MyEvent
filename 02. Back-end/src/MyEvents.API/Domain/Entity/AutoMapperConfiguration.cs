@@ -9,7 +9,7 @@ namespace MyEvents.API.Domain.Entity
         {
             var mapper = new MapperConfiguration(config =>
             {
-                config.AddProfile<EventoMapper>();
+                config.AddProfile<EventMapper>();
             });
         }
     }

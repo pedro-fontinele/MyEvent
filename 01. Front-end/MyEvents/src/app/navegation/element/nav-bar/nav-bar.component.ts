@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EApplication } from 'src/app/common/enum/application-enums';
+import { EApplication } from 'src/app/common/enum/application/application-enums';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,13 +8,13 @@ import { EApplication } from 'src/app/common/enum/application-enums';
 })
 export class NavBarComponent implements OnInit {
 
-  public telaEventos: string = '';
-  public telaPalestrantes: string = '';
+  public screenEvents: string;
+  public screenSpeakers: string;
   public isCollapsed = true;
 
   constructor() {
-    this.telaEventos = EApplication.Eventos;
-    this.telaPalestrantes = EApplication.Palestrantes;
+    this.screenEvents = EApplication.Events;
+    this.screenSpeakers = EApplication.Speakers;
    }
 
   ngOnInit(): void {
