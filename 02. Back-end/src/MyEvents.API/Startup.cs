@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MyEvents.API.Data.Context;
-using MyEvents.API.Data.Repositores;
+using MyEvents.API.Data.Repository;
 using MyEvents.API.Domain.Entity;
 using MyEvents.API.Services;
 
@@ -40,8 +40,8 @@ namespace MyEvents.API
             services.AddServiceConfiguration();
             #endregion
 
-            #region RepositoriesConfiguration
-            services.AddRepositoriesConfiguration();
+            #region RepositoryConfiguration
+            services.AddRepositoryConfiguration();
             #endregion
 
             #region ApiVersioning
