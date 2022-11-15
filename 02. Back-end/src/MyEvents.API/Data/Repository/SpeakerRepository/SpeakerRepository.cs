@@ -6,7 +6,7 @@ using MyEvents.API.Domain.Entity.Model;
 
 namespace MyEvents.API.Data.Repository
 {
-    public class SpeakerRepository : ISpeakerRepository, IActionsRepository
+    public class SpeakerRepository : ISpeakerRepository
     {
         private readonly DataContext _dataContext;
 
@@ -42,7 +42,7 @@ namespace MyEvents.API.Data.Repository
 
         public async Task<Speaker[]> GetAllSpeakerAsync()
         {
-            IQueryable<Speaker> query = _dataContext.Speaker.Include(e => e.SocialNetwork);
+            IQueryable<Speaker> query = _dataContext.Speaker.AsNoTracking();
 
             query = query.OrderBy(e => e.IdSpeaker);
 
@@ -51,7 +51,7 @@ namespace MyEvents.API.Data.Repository
 
         public async Task<Speaker> GetSpeakerByIdAsync(uint id)
         {
-            IQueryable<Speaker> query = _dataContext.Speaker.Include(e => e.SocialNetwork);
+            IQueryable<Speaker> query = _dataContext.Speaker.AsNoTracking();
 
             query = query.OrderBy(e => e.IdSpeaker)
                          .Where(e => e.IdSpeaker == id);
@@ -61,7 +61,7 @@ namespace MyEvents.API.Data.Repository
 
         public async Task<Speaker[]> GetSpeakerByNameAsync(string name)
         {
-            IQueryable<Speaker> query = _dataContext.Speaker.Include(e => e.SocialNetwork);
+            IQueryable<Speaker> query = _dataContext.Speaker.AsNoTracking();
 
             query = query.OrderBy(e => e.IdSpeaker)
                          .Where(e => e.Name.ToUpper().Contains(name.ToUpper()));
