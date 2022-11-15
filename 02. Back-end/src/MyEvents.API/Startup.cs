@@ -29,7 +29,8 @@ namespace MyEvents.API
             #endregion
 
             #region Controller
-            services.AddControllers();
+            services.AddControllers()
+                    .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             #endregion
 
             #region Cors

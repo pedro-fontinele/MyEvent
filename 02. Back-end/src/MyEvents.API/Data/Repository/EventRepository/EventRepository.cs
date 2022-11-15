@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using MyEvents.API.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using MyEvents.API.Domain.Entity.Model;
 
 namespace MyEvents.API.Data.Repository
 {
-    public class EventRepository : IEventRepository, IActionsRepository
+    public class EventRepository : IEventRepository
     {
         private readonly DataContext _dataContext;
 
@@ -15,45 +15,48 @@ namespace MyEvents.API.Data.Repository
             _dataContext = dataContext;
         }
 
-        public void Add<T>(T Entity) where T : class
+        public Task InsertEventsAsync (Event eventModel)
         {
-            _dataContext.Add(Entity);
-        }
-        
-        public void Update<T>(T Entity) where T : class
-        {
-            _dataContext.Update(Entity);
+            _dataContext.Add(eventModel);
+            return Task.CompletedTask;
         }
 
-        public void Delete<T>(T Entity) where T : class
+        public Task UpdateEventsAsync (Event eventModel)
         {
-            _dataContext.Remove(Entity);
+            _dataContext.Update(eventModel);
+            return Task.CompletedTask;
         }
 
-        public void DeleteRange<T>(T Entity) where T : class
+        public Task DeleteEventsAsync (Event eventModel)
         {
-            _dataContext.RemoveRange(Entity);
+            _dataContext.Remove(eventModel);
+            return Task.CompletedTask;
         }
 
-        public async Task<bool> SaveChangesAsync()
+        public Task DeleteAllEventsAsync (Event eventModel)
         {
-           return await _dataContext.SaveChangesAsync() > 0;
+            _dataContext.Remove(eventModel);
+            return Task.CompletedTask;
         }
 
-        public async Task<Event[]> GetAllEventsAsync()
+        public Task SaveChangesAsync ()
         {
-            IQueryable<Event> query = _dataContext.Event.Include(e => e.Batch)
-                                                        .Include(e => e.SocialNetwork);
+           _dataContext.SaveChangesAsync();
+            return Task.CompletedTask;
+        }
+
+        public async Task<Event[]> GetAllEventsAsync ()
+        {
+            IQueryable<Event> query = _dataContext.Event.AsNoTracking();
 
             query = query.OrderBy(e => e.IdEvent);
 
             return await query.ToArrayAsync();
         }
 
-        public async Task<Event> GetEventsByIdAsync(uint id)
+        public async Task<Event> GetEventsByIdAsync (uint id)
         {
-            IQueryable<Event> query = _dataContext.Event.Include(e => e.Batch)
-                                                        .Include(e => e.SocialNetwork);
+            IQueryable<Event> query = _dataContext.Event.AsNoTracking();
 
             query = query.OrderBy(e => e.IdEvent)
                          .Where(e => e.IdEvent == id);
@@ -61,10 +64,9 @@ namespace MyEvents.API.Data.Repository
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<Event[]> GetEventsByThemeAsync(string theme)
+        public async Task<Event[]> GetEventsByThemeAsync (string theme)
         {
-            IQueryable<Event> query = _dataContext.Event.Include(e => e.Batch)
-                                                        .Include(e => e.SocialNetwork);
+            IQueryable<Event> query = _dataContext.Event.AsNoTracking();
 
             query = query.OrderBy(e => e.IdEvent)
                          .Where(e => e.Theme.ToUpper().Contains(theme.ToUpper()));
