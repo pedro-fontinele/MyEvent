@@ -18,40 +18,52 @@ namespace MyEvents.API.Application.Controllers.v1
         }
 
         [HttpGet]
-        public async Task<Event[]> Get()
+        public async Task<IActionResult> Get ()
         {
             var returnedEvent = await _eventService.GetAllEventsAsync();
-            return returnedEvent;
+            return Ok(returnedEvent);
         }
 
-        [HttpGet("{id}")]
-        public string Get(uint id)
+        [HttpGet("id/{idEvent}")]
+        public async Task<IActionResult> Get (uint idEvent)
         {
-            return "Retonar Get por id";
+            var returnedEvent = await _eventService.GetEventsByIdAsync(idEvent);
+            return Ok(returnedEvent);
+        }
+
+        [HttpGet("theme/{theme}")]
+        public async Task<IActionResult> Get (string theme)
+        {
+            var returnedEvent = await _eventService.GetEventsByThemeAsync(theme);
+            return Ok(returnedEvent);
         }
 
         [HttpPost]
-        public string Post()
+        public async Task<IActionResult> Post (Event eventModel)
         {
-            return "Exemplo de Post";
+            var returnedEvent = await _eventService.InsertEventsAsync(eventModel);
+            return Ok(returnedEvent);
         }
 
-        [HttpPut("{id}")]
-        public string Put(uint id)
+        [HttpPut("id/{idEvent}")]
+        public async Task<IActionResult> Put (uint idEvent, Event eventModel)
         {
-            return "Exemplo de Put";
+            var returnedEvent = await _eventService.UpdateEventsAsync(idEvent, eventModel);
+            return Ok(returnedEvent);
+        }
+
+        [HttpDelete("id/{idEvent}")]
+        public async Task<IActionResult> Delete (uint idEvent)
+        {
+            var returnedEvent = await _eventService.DeleteEventsAsync(idEvent);
+            return Ok(returnedEvent);
         }
 
         [HttpDelete]
-        public string Delete()
+        public async Task<IActionResult> DeleteAll ()
         {
-            return "Exemplo de Delete";
-        }
-
-        [HttpDelete("{id}")]
-        public string Delete(uint id)
-        {
-            return "Exemplo de Delete por id";
+            var returnedEvent = await _eventService.DeleteAllEventsAsync();
+            return Ok(returnedEvent);
         }
     }
 }

@@ -1,0 +1,36 @@
+<table class="table table-striped">
+  <thead class="thead-dark">
+      <tr>
+        <th>{{eventTable.idEvent}}</th>
+        <th><app-button-show-or-hide-image></app-button-show-or-hide-image></th>
+        <th>{{eventTable.theme}}</th>
+        <th>{{eventTable.local}}</th>
+        <th>{{eventTable.dateEvent}}</th>
+        <th>{{eventTable.numberOfParticipants}}</th>
+        <th>{{eventTable.batch}}</th>
+        <th>{{eventTable.options}}</th>
+      </tr>
+  </thead>
+  <tbody *ngIf="events != null">
+      <tr *ngFor="let event of events">
+         <td>{{event.idEvent}}</td>
+         <td><img [collapse]="!showImages" [isAnimated]="true" src={{sourceImages}}{{event.imageUrl}} alt="image-event" id="image-event"></td>
+         <td>{{event.theme}}</td>
+         <td>{{event.local}}</td>
+         <td>{{event.eventDate | dateFormat}}</td>
+         <td>{{event.numberOfParticipants}}</td>
+         <td>{{event.batch}}</td>
+         <td>
+            <app-button-edit></app-button-edit>
+            <app-button-delete></app-button-delete>
+         </td>
+      </tr>
+  </tbody>
+  <tbody *ngIf="events == null">
+      <tr>
+        <td colspan="8" class="text-center">
+           <h4>{{noDataFound}}</h4>
+        </td>
+      </tr>
+  </tbody>
+</table>

@@ -1,0 +1,8 @@
+<button type="button" class="btn btn-danger btn-sm" (click)="openModal(template)"><i class='fa fa-trash mr-1'></i>{{deleteButton}}</button>
+<ng-template #template>
+   <div class="modal-body text-center">
+     <p>{{deleteThisRecord}}</p>
+     <button type="button" class="btn btn-default" (click)="confirm()" >{{yes}}</button>
+     <button type="button" class="btn btn-primary" (click)="decline()" >{{no}}</button>
+   </div>
+ </ng-template>
