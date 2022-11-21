@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
+import { EMessage } from './common/enum/message/message/message-enums';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MyEvents';
+  
+  public loadingApplication: string = EMessage.Loading;
 
   constructor() {
   }

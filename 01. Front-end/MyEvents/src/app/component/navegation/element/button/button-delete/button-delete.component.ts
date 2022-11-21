@@ -1,4 +1,5 @@
-import { EMessage } from 'src/app/common/enum/message/message-enums';
+import { EAlert } from './../../../../../common/enum/message/alert/alert-enums';
+import { EActions } from './../../../../../common/enum/message/actions/actions-enums';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { EButton } from 'src/app/common/enum/button/button';
@@ -17,11 +18,11 @@ export class ButtonDeleteComponent implements OnInit {
   }
 
   public deleteButton: string = EButton.Delete;
-  public deleteThisRecord: string = EMessage.DeleteThisRecord;
-  public recordDeleted: string = EMessage.RecordDeleted;
-  public actionCanceled: string = EMessage.ActionCanceled;
-  public infoDeletedEvent: string = EMessage.InfoDeletedEvent;
-  public infoCanceledEvent: string = EMessage.InfoCanceledEvent;
+  public deleteThisRecord: string = EAlert.DeleteThisRecord;
+  public recordDeleted: string = EActions.RecordDeleted;
+  public actionCanceled: string = EActions.ActionCanceled;
+  public infoDeletedEvent: string = EActions.InfoDeletedEvent;
+  public infoCanceledEvent: string = EActions.InfoCanceledEvent;
   public yes: string = EYesOrNo.Yes;
   public no: string = EYesOrNo.No;
   

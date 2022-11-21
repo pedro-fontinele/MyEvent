@@ -1,3 +1,5 @@
+import { ProfileComponent } from './component/application/user/profile/profile.component';
+import { EventsDetailComponent } from './component/application/events/events-detail/events-detail.component';
 import { EventService } from './service/event.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,10 +20,15 @@ import { EventsFormComponent } from './component/application/events/events-form/
 import { ButtonEditComponent } from './component/navegation/element/button/button-edit/button-edit.component';
 import { ButtonDeleteComponent } from './component/navegation/element/button/button-delete/button-delete.component';
 import { ButtonShowOrHideComponent } from './component/navegation/element/button/button-show-or-hide-image/button-show-or-hide-image.component';
-import { ApplicationEventsTitleComponent } from './component/navegation/element/application-title/application-events-title/app-events-title.component';
+import { ApplicationEventsTitleComponent } from './component/application/events/events-title/events-title.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { UserComponent } from './component/application/user/user.component';
+import { LoginComponent } from './component/application/user/login/login.component';
+import { RegistrationComponent } from './component/application/user/registration/registration.component';
+import { PorfileTitleComponent } from './component/application/user/profile/porfile-title/porfile-title.component';
+import { PorfileFormComponent } from './component/application/user/profile/porfile-form/porfile-form.component';
 
 
 @NgModule({
@@ -37,7 +44,14 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ApplicationEventsTitleComponent,
     ButtonEditComponent,
     ButtonDeleteComponent,
-    ButtonShowOrHideComponent
+    ButtonShowOrHideComponent,
+    EventsDetailComponent,
+    UserComponent,
+    LoginComponent,
+    RegistrationComponent,
+    PorfileTitleComponent,
+    PorfileFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -48,10 +62,10 @@ import { NgxSpinnerModule } from "ngx-spinner";
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     ToastrModule.forRoot({
-        timeOut: 3000,
-        positionClass: 'toast-bottom-right',
-        preventDuplicates: true,
-        progressBar:  true
+          timeOut: 3000,
+          positionClass: 'toast-bottom-right',
+          preventDuplicates: true,
+          progressBar:  true
     }),
     NgxSpinnerModule.forRoot(),
     FormsModule
