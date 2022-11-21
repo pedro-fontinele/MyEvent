@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { EventTable } from 'src/app/common/class-support/event-table/event-table';
-import { EMessage } from 'src/app/common/enum/message/message-enums';
+import { EMessage } from 'src/app/common/enum/message/message/message-enums';
 import { EventService } from 'src/app/service/event.service';
 import { Event } from '../../../../common/model/event';
+import { ApplicationEventsTitleComponent } from '../events-title/events-title.component';
 
 @Component({
   selector: 'app-events-table',
@@ -27,8 +29,13 @@ export class EventsTableComponent implements OnInit {
   // classe de apoio
   public eventTable: EventTable;
 
-  constructor (public eventService: EventService, private toastr: ToastrService, private spinner: NgxSpinnerService) { 
-       this.eventTable = new EventTable();
+  constructor (
+    public eventService: EventService, 
+    private toastr: ToastrService, 
+    private spinner: NgxSpinnerService, 
+    public router: Router
+  ) { 
+    this.eventTable = new EventTable();
   }
 
   ngOnInit (): void {
@@ -50,4 +57,8 @@ export class EventsTableComponent implements OnInit {
         }
      });
    }
+
+  eventDetail(id: number){
+    this.router.navigate([`events/detail/${id}`]);
+  }
 }

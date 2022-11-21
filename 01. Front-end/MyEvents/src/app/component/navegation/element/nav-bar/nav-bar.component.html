@@ -1,20 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="col-md-11 container">
+<nav *ngIf="shouldShowNavbar()" class="navbar navbar-expand-lg navbar-dark text-white bg-dark shadow-md">
+  <div class="col-md-10 container">
     <div class="container-fluid">
-       <a class="navbar-brand" routerLink="dashboard">MyEvents</a>
+       <a class="navbar-brand" routerLink="dashboard"><i class="fa fa-users"></i></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
        </button>
        <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isCollapsed" [isAnimated]="true">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" routerLink="events">{{screenEvents}}</a>
+              <a class="nav-link text-white" (click)="routerEvents()">{{screenEvents}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="speakers">{{screenSpeakers}}</a>
+              <a class="nav-link text-white" (click)="routerSpeakers()">{{screenSpeakers}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="contacts">{{screenContacts}}</a>
+              <a class="nav-link  text-white" (click)="routerContacts()">{{screenContacts}}</a>
             </li>
           </ul>
        </div>

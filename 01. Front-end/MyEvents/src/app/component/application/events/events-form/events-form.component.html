@@ -1,7 +1,17 @@
-<hr>
-<div action="" class="form-inline">
-  <div class="form-group mb-2">
-      <input type="text" class="form-control mr-2" placeholder="Find event" [(ngModel)]="filterList">
-      <button type="button" class="btn btn-success" (click)="filterEvents(filterList)">{{searchButton}}</button>
+<div class="d-flex">
+  <div class="flex-fill pr-3">
+    <div class="input-group mb-2">
+      <div class="input-group-prepended">
+        <div class="input-group-text">{{filterFields}}</div>
+      </div>
+      <input type="text" class="form-control" placeholder="Find event" [(ngModel)]="filterList">
+      <button type="button" class="btn btn-success ml-3" (click)="filterEvents(filterList)">{{searchButton}}</button>
+    </div>
+  </div>
+  <div>
+    <a class="d-flex btn btn-outline-primary" (click)="routerDetail()">
+      <i class="fa fa-plus-circle my-1"></i>
+      <b class="ml-1 d-none d-sm-block">{{newButton}}</b>
+    </a>
   </div>
 </div>
