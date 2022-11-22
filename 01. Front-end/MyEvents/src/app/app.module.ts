@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './component/navegation/element/nav-bar/nav-bar.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DateFormatPipe } from './common/pipe/date-format.pipe';
 import { AccountComponent } from './component/navegation/element/account/account.component';
 import { EventsTableComponent } from './component/application/events/events-table/events-table.component';
@@ -68,7 +68,8 @@ import { PorfileFormComponent } from './component/application/user/profile/porfi
           progressBar:  true
     }),
     NgxSpinnerModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     EventService
