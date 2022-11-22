@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-events-detail',
@@ -12,4 +13,5 @@ export class EventsDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  form!: FormGroup;
 }
