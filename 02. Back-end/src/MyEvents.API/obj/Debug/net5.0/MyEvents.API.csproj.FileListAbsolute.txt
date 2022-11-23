@@ -9,6 +9,8 @@ C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.A
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\MyEvents.API.pdb
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\AutoMapper.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Humanizer.dll
+C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.Data.Sqlite.dll
@@ -21,6 +23,8 @@ C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.A
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\SQLitePCLRaw.batteries_v2.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\SQLitePCLRaw.nativelibrary.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\SQLitePCLRaw.core.dll
@@ -57,8 +61,3 @@ C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.A
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\obj\Debug\net5.0\ref\MyEvents.API.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\obj\Debug\net5.0\MyEvents.API.pdb
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\obj\Debug\net5.0\MyEvents.API.genruntimeconfig.cache
-C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
-C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Newtonsoft.Json.dll
-C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
-C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\obj\Debug\net5.0\MyEvents.API.csproj.AssemblyReference.cache

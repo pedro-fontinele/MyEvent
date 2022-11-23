@@ -1,3 +1,4 @@
+import { EButton } from 'src/app/common/enum/button/button';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,10 +11,12 @@ export class RegistrationComponent implements OnInit {
 
   constructor(public router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  routerLogin(): void {
+  public alreadyRegisteredButton = EButton.AlreadyRegistered;
+  public doneButton = EButton.Done;
+
+  public routerLogin(): void {
     this.router.navigate(['/user/login']);
   }
 
