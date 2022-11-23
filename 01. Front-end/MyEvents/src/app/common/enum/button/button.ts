@@ -4,5 +4,8 @@ export enum EButton {
     Edit = "Edit",
     Delete = "Delete",
     Dashboard = "Back to Dashboard",
-    List = "View List"
+    List = "View List",
+    Done = "Done",
+    Cancel = "Cancel",
+    AlreadyRegistered = "I'm already registered"
 }
