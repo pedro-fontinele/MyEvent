@@ -1,59 +1,71 @@
 <div class="row mt-4">	
-	<div class="col-md-6 d-none d-md-block" style="height: 450px;">
-		<div class="text-center col-md-12 my-auto side-heder">
-			<h1>Cadastro de Usuário</h1>
-			<img src="../../../../assets/image/registerImage.png" class="my-4" alt="" width="400px">
-		</div>
-	</div>	
-	<div class="col-md-6">		
-		<form class="p-1">
-			<div class="pb-2 d-block d-md-none">
-				<h3 class="border-bottom">Cadastro de Usuário</h3>
-			</div>
-			<div class="form-row">
-				<div class="form-group col-sm-6">
-					<label>Primeiro Nome</label>
-					<input type="text" class="form-control" placeholder="Insira o Primeiro nome" />
-				</div>
-				<div class="form-group col-sm-6">
-					<label>Último nome</label>
-					<input type="text" class="form-control" placeholder="Insira o Último nome" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="">Email:</label>
-				<input class="form-control" type="text" placeholder="Insira o Nome Completo" />
-			</div>
-			<div class="form-group">
-				<label for="">Usuario:</label>
-				<input class="form-control" type="text" placeholder="Insira o nome de Usuário" />      
-			</div>
-			<div class="form-row">
-				<div class="form-group col-sm-6">
-					<label for="">Senha:</label>
-					<input class="form-control" type="password" placeholder="Digite uma Senha" />
-				</div>
-				<div class="form-group col-sm-6">
-					<label for="">Confirmar Senha:</label>
-					<input class="form-control" type="password" placeholder="Confirme a Senha" />
-				</div>
-			</div>
-			<div class="form-row p-1 mb-3">
-				<div class="custom-control custom-checkbox">
-					<input type="checkbox" class="custom-control-input" id="customCheck1">
-					<label class="custom-control-label">Eu concordo com os <a href="#">Termos de Uso</a>.</label>
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="form-group col-12">
-					<button class="btn btn-lg btn-success btn-block px-5">{{doneButton}}</button>
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="form-group col-12">
-					<a class="btn btn-link btn-block" (click)="routerLogin()">{{alreadyRegisteredButton}}</a>
-				</div>
-			</div>
-		</form>		
-	</div>
+   <div class="col-md-6 d-none d-md-block" style="height: 450px;">
+   	 <div class="text-center col-md-12 my-auto side-heder">
+   		<h1>{{registrationFields.UserRegistration}}</h1>
+   		<img src="../../../../assets/image/registerImage.png" class="my-4" alt="" width="400px">
+   	 </div>
+   </div>	
+   <div class="col-md-6 card rounded shadow-md p-3">		
+   	<form [formGroup]="form" class="p-3">
+   		<div class="pb-2 d-block d-md-none">
+   			<h3 class="border-bottom">{{registrationFields.UserRegistration}}</h3>
+   		</div>
+   		<div class="form-row">
+   			<div class="form-group col-sm-6">
+   				<label>{{registrationFields.FristName}}</label>
+   				<input type="text" class="form-control is-invalid" [ngClass]="{'is-invalid' : form.get('fristName')?.errors && form.get('fristName')?.touched}" formControlName="fristName" placeholder="Inform your frist name" />
+				<div *ngIf="form.get('fristName')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+				<div *ngIf="form.get('fristName')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>
+   			</div>
+   			<div class="form-group col-sm-6">
+   				<label>{{registrationFields.LastName}}</label>
+   				<input type="text" class="form-control is-invalid" [ngClass]="{'is-invalid' : form.get('lastName')?.errors && form.get('lastName')?.touched}" formControlName="lastName" placeholder="Inform your last name" />
+				<div *ngIf="form.get('lastName')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+				<div *ngIf="form.get('lastName')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>
+   			</div>
+   		</div>
+   		<div class="form-group">
+   			<label for="">{{registrationFields.Email}}</label>
+   			<input class="form-control is-invalid" type="text" [ngClass]="{'is-invalid' : form.get('email')?.errors && form.get('email')?.touched}" formControlName="email" placeholder="Inform your email" />
+			<div *ngIf="form.get('email')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+			<div *ngIf="form.get('email')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>
+   		</div>
+   		<div class="form-group">
+   			<label for="">{{registrationFields.User}}</label>
+   			<input class="form-control is-invalid" type="text" [ngClass]="{'is-invalid' : form.get('user')?.errors && form.get('user')?.touched}" formControlName="user" placeholder="Inform a new username" />      
+			<div *ngIf="form.get('user')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+			<div *ngIf="form.get('user')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>			
+   		</div>
+   		<div class="form-row">
+   			<div class="form-group col-sm-6">
+   				<label for="">{{registrationFields.Password}}</label>
+   				<input class="form-control is-invalid" type="password" [ngClass]="{'is-invalid' : form.get('password')?.errors && form.get('password')?.touched}" formControlName="password" placeholder="Type it your password" />
+				<div *ngIf="form.get('password')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+				<div *ngIf="form.get('password')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>				
+   			</div>
+   			<div class="form-group col-sm-6">
+   				<label for="">{{registrationFields.ConfirmPassword}}</label>
+   				<input class="form-control is-invalid" type="password"  [ngClass]="{'is-invalid' : form.get('confirmPassword')?.errors && form.get('confirmPassword')?.touched}" formControlName="confirmPassword" placeholder="Confirm your password" />
+				<div *ngIf="form.get('confirmPassword')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+				<div *ngIf="form.get('confirmPassword')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>				
+   			</div>
+   		</div>
+   		<div class="form-row p-1 mb-3">
+   			<div class="custom-control custom-checkbox">
+   				<input type="checkbox" class="custom-control-input" id="customCheck1">
+   				<label class="custom-control-label">{{registrationFields.IAgreeWith}}<a href="#">{{registrationFields.TermsOfUse}}</a>.</label>
+   			</div>
+   		</div>
+   		<div class="form-row">
+   			<div class="form-group col-12">
+   				<button class="btn btn-lg btn-success btn-block px-5" [disabled]="!form.valid">{{doneButton}}</button>
+   			</div>
+   		</div>
+   		<div class="form-row">
+   			<div class="form-group col-12">
+   				<a class="btn btn-link btn-block" (click)="routerLogin()">{{alreadyRegisteredButton}}</a>
+   			</div>
+   		</div>
+   	</form>		
+   </div>
 </div>

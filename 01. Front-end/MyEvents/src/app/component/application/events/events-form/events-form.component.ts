@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { EButton } from 'src/app/common/enum/button/button';
-import { EventService } from 'src/app/service/event.service';
 import { EventsTableComponent } from '../events-table/events-table.component';
 import { Router } from '@angular/router';
+import { EventService } from '@app/service/events/event.service';
 
 @Component({
   selector: 'app-events-form',

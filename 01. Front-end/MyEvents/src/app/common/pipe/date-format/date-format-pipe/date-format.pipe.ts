@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Pipe, PipeTransform } from '@angular/core';
-import { DateFormat } from '../class-support/date-format/date-format';
+import { DateFormat } from '@app/common/pipe/date-format/date-format-class/date-format';
 
 @Pipe({
   name: 'dateFormat'

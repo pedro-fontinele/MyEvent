@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EventService } from '@app/service/events/event.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
-import { EventTable } from 'src/app/common/class-support/event-table/event-table';
 import { EMessage } from 'src/app/common/enum/message/message/message-enums';
-import { EventService } from 'src/app/service/event.service';
 import { Event } from '../../../../common/model/event';
-import { ApplicationEventsTitleComponent } from '../events-title/events-title.component';
+import { eventTableFieldsFields } from '../../application-fields/event-fields/event-table/event-table-fields';
 
 @Component({
   selector: 'app-events-table',
@@ -27,7 +26,7 @@ export class EventsTableComponent implements OnInit {
   public showImages: boolean = true;
 
   // classe de apoio
-  public eventTable: EventTable;
+  public eventTableFields: eventTableFieldsFields;
 
   constructor (
     public eventService: EventService, 
@@ -35,7 +34,7 @@ export class EventsTableComponent implements OnInit {
     private spinner: NgxSpinnerService, 
     public router: Router
   ) { 
-    this.eventTable = new EventTable();
+    this.eventTableFields = new eventTableFieldsFields();
   }
 
   ngOnInit (): void {

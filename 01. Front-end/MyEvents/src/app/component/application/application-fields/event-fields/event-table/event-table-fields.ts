@@ -1,4 +1,4 @@
-export class EventTable  {
+export class eventTableFieldsFields  {
     idEvent: string = "IdEvent";
     viewImage: string = "View Image";
     hideImage: string = "Hide Image";
