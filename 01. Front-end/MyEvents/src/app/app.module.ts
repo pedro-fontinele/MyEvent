@@ -1,6 +1,5 @@
 import { ProfileComponent } from './component/application/user/profile/profile.component';
 import { EventsDetailComponent } from './component/application/events/events-detail/events-detail.component';
-import { EventService } from './service/event.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +12,6 @@ import { NavBarComponent } from './component/navegation/element/nav-bar/nav-bar.
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DateFormatPipe } from './common/pipe/date-format.pipe';
 import { AccountComponent } from './component/navegation/element/account/account.component';
 import { EventsTableComponent } from './component/application/events/events-table/events-table.component';
 import { EventsFormComponent } from './component/application/events/events-form/events-form.component';
@@ -29,6 +27,8 @@ import { LoginComponent } from './component/application/user/login/login.compone
 import { RegistrationComponent } from './component/application/user/registration/registration.component';
 import { PorfileTitleComponent } from './component/application/user/profile/porfile-title/porfile-title.component';
 import { PorfileFormComponent } from './component/application/user/profile/porfile-form/porfile-form.component';
+import { DateFormatPipe } from './common/pipe/date-format/date-format-pipe/date-format.pipe';
+import { EventService } from './service/events/event.service';
 
 
 @NgModule({

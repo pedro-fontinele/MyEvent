@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventTable } from 'src/app/common/class-support/event-table/event-table';
+import { eventTableFieldsFields } from '@app/component/application/application-fields/event-fields/event-table/event-table-fields';
 import { EventsTableComponent } from 'src/app/component/application/events/events-table/events-table.component';
 
 @Component({
@@ -10,10 +10,10 @@ import { EventsTableComponent } from 'src/app/component/application/events/event
 export class ButtonShowOrHideComponent implements OnInit {
 
   constructor(private _eventsTableComponent: EventsTableComponent) { 
-    this.eventTable = new EventTable();
+    this.eventTableFields = new eventTableFieldsFields();
   }
 
-  public eventTable: EventTable;
+  public eventTableFields: eventTableFieldsFields;
 
   public mustShow: boolean = true;
 

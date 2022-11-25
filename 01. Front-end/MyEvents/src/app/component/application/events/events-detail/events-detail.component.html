@@ -3,7 +3,7 @@
     <div class="p-3">
       <div class="form-row">
         <div class="form-group col-md-12">
-          <label>{{eventTable.theme}}</label>
+          <label>{{eventTableFields.theme}}</label>
           <input type="text" class="form-control is-invalid" [ngClass]="{'is-invalid' : form.get('theme')?.errors && form.get('theme')?.touched}" formControlName="theme" placeholder="Inform the theme"> 
           <div *ngIf="form.get('theme')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
           <div *ngIf="form.get('theme')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>
@@ -11,13 +11,13 @@
       </div>
       <div class="form-row">
         <div class="form-group col-md-8">
-          <label>{{eventTable.local}}</label>
+          <label>{{eventTableFields.local}}</label>
           <input type="text" class="form-control is-invalid" [ngClass]="{'is-invalid' : form.get('local')?.errors && form.get('local')?.touched}" formControlName="local" placeholder="Inform the local of event">
           <div *ngIf="form.get('local')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
           <div *ngIf="form.get('local')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>
         </div>
         <div class="form-group col-md-4">
-          <label>{{eventTable.dateEvent}}</label>
+          <label>{{eventTableFields.dateEvent}}</label>
           <input type="date" class="form-control is-invalid" [ngClass]="{'is-invalid' : form.get('dateEvent')?.errors && form.get('dateEvent')?.touched}" formControlName="dateEvent" placeholder="Inform the date of event">
           <div *ngIf="form.get('dateEvent')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
           <div *ngIf="form.get('dateEvent')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>
@@ -25,7 +25,7 @@
       </div>
       <div class="form-row">
         <div class="form-group col-md-2">
-          <label>{{eventTable.numberOfParticipants}}</label>
+          <label>{{eventTableFields.numberOfParticipants}}</label>
           <input type="number" min="0" step="1" class="form-control is-invalid" formControlName="numberOfParticipants" [ngClass]="{'is-invalid' : form.get('numberOfParticipants')?.errors && form.get('numberOfParticipants')?.touched}" placeholder="Number of Participants">
           <div *ngIf="form.get('numberOfParticipants')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
           <div *ngIf="form.get('numberOfParticipants')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>                    
