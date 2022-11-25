@@ -1,16 +1,16 @@
-<div class="card rounded shadow-md p-3">
+<div class="card rounded shadow-md p-4">
   <app-events-form></app-events-form>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead class="thead-dark">
         <tr>
-          <th>{{eventTable.idEvent}}</th>
+          <th>{{eventTableFields.idEvent}}</th>
           <th class="d-none d-md-table-cell"><app-button-show-or-hide-image></app-button-show-or-hide-image></th>
-          <th>{{eventTable.theme}}</th>
-          <th class="d-none d-md-table-cell">{{eventTable.local}}</th>
-          <th>{{eventTable.dateEvent}}</th>
-          <th class="d-none d-md-table-cell">{{eventTable.numberOfParticipants}}</th>
-          <th class="d-none d-md-table-cell">{{eventTable.batch}}</th>
-          <th>{{eventTable.options}}</th>
+          <th>{{eventTableFields.theme}}</th>
+          <th class="d-none d-md-table-cell">{{eventTableFields.local}}</th>
+          <th>{{eventTableFields.dateEvent}}</th>
+          <th class="d-none d-md-table-cell">{{eventTableFields.numberOfParticipants}}</th>
+          <th class="d-none d-md-table-cell">{{eventTableFields.batch}}</th>
+          <th>{{eventTableFields.options}}</th>
         </tr>
     </thead>
     <tbody *ngIf="events != null">
