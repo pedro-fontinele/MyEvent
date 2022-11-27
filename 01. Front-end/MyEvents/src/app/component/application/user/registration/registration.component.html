@@ -40,14 +40,15 @@
    			<div class="form-group col-sm-6">
    				<label for="">{{registrationFields.Password}}</label>
    				<input class="form-control is-invalid" type="password" [ngClass]="{'is-invalid' : form.get('password')?.errors && form.get('password')?.touched}" formControlName="password" placeholder="Type it your password" />
-				<div *ngIf="form.get('password')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
-				<div *ngIf="form.get('password')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>				
+				<div *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched" class="invalid-feedback">{{fieldIsRequired}}</div>
+				<div *ngIf="form.get('password')?.hasError('maxlength') && form.get('password')?.touched" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>				
    			</div>
    			<div class="form-group col-sm-6">
    				<label for="">{{registrationFields.ConfirmPassword}}</label>
    				<input class="form-control is-invalid" type="password"  [ngClass]="{'is-invalid' : form.get('confirmPassword')?.errors && form.get('confirmPassword')?.touched}" formControlName="confirmPassword" placeholder="Confirm your password" />
-				<div *ngIf="form.get('confirmPassword')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
-				<div *ngIf="form.get('confirmPassword')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>				
+				<div *ngIf="form.get('confirmPassword')?.hasError('required') && form.get('confirmPassword')?.touched" class="invalid-feedback">{{fieldIsRequired}}</div>
+				<div *ngIf="form.get('confirmPassword')?.hasError('mustMatch') && form.get('confirmPassword')?.touched" class="invalid-feedback">{{passwordsNotMatch}}</div>
+				<div *ngIf="form.get('confirmPassword')?.hasError('maxlength') && form.get('confirmPassword')?.touched" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>				
    			</div>
    		</div>
    		<div class="form-row p-1 mb-3">

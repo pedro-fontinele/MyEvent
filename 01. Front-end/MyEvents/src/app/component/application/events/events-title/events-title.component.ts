@@ -18,6 +18,7 @@ export class ApplicationEventsTitleComponent implements OnInit {
 
   public eventsTitle: string = EApplication.Events;
   public dashboardButton: string = EButton.Dashboard;
+  public viewList: string = EButton.List;
 
   routerList(): void{
     this.router.navigate(['/dashboard']);
