@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { EMessage } from 'src/app/common/enum/message/message/message-enums';
 import { Event } from '../../../../common/model/event';
 import { eventTableFieldsFields } from '../../application-fields/event-fields/event-table/event-table-fields';
+import { ApplicationEventsTitleComponent } from '../events-title/events-title.component';
 
 @Component({
   selector: 'app-events-table',
@@ -27,14 +28,11 @@ export class EventsTableComponent implements OnInit {
 
   // classe de apoio
   public eventTableFields: eventTableFieldsFields;
+  public applicationEventsTitleComponent: ApplicationEventsTitleComponent;
 
-  constructor (
-    public eventService: EventService, 
-    private toastr: ToastrService, 
-    private spinner: NgxSpinnerService, 
-    public router: Router
-  ) { 
+  constructor (public eventService: EventService, private toastr: ToastrService, private spinner: NgxSpinnerService, public router: Router) { 
     this.eventTableFields = new eventTableFieldsFields();
+    this.applicationEventsTitleComponent = new ApplicationEventsTitleComponent(router);
   }
 
   ngOnInit (): void {
