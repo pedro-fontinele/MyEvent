@@ -14,11 +14,11 @@ import { EventService } from '@app/service/events/event.service';
 })
 export class EventsFormComponent implements OnInit {
 
-  constructor (public eventService: EventService, 
-               public toastr: ToastrService, 
-               public spinner: NgxSpinnerService, 
-               public router: Router) {
+  constructor (public eventService: EventService, public toastr: ToastrService, public spinner: NgxSpinnerService, public router: Router) {
     this.eventsTableComponent = new EventsTableComponent(eventService, toastr, spinner, router);
+  }
+  
+  ngOnInit() {
   }
 
   public eventsTableComponent: EventsTableComponent;
@@ -50,8 +50,4 @@ export class EventsFormComponent implements OnInit {
   routerDetail(): void{
     this.router.navigate(['/events/detail']);
   }
-
-  ngOnInit() {
-  }
-
 }
