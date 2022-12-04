@@ -15,37 +15,36 @@ namespace MyEvents.API.Data.Repository
             _dataContext = dataContext;
         }
 
-        public Task InsertEventsAsync (Event eventModel)
+        public void InsertEvents (Event eventModel)
         {
             _dataContext.Add(eventModel);
-            return Task.CompletedTask;
+            SaveChanges();
         }
 
-        public Task UpdateEventsAsync (Event eventModel)
+        public void UpdateEvents (Event eventModel)
         {
             _dataContext.Update(eventModel);
-            return Task.CompletedTask;
+            SaveChanges();
         }
 
-        public Task DeleteEventsAsync (Event eventModel)
+        public void DeleteEvents (Event eventModel)
         {
             _dataContext.Remove(eventModel);
-            return Task.CompletedTask;
+            SaveChanges();
         }
 
-        public Task DeleteAllEventsAsync (Event eventModel)
+        public void DeleteAllEvents (Event eventModel)
         {
             _dataContext.Remove(eventModel);
-            return Task.CompletedTask;
+            SaveChanges();
         }
 
-        public Task SaveChangesAsync ()
+        public void SaveChanges ()
         {
-           _dataContext.SaveChangesAsync();
-            return Task.CompletedTask;
+           _dataContext.SaveChanges();
         }
 
-        public async Task<Event[]> GetAllEventsAsync ()
+        public async Task<Event[]> GetAllEvents ()
         {
             IQueryable<Event> query = _dataContext.Event.AsNoTracking();
 
@@ -54,22 +53,22 @@ namespace MyEvents.API.Data.Repository
             return await query.ToArrayAsync();
         }
 
-        public async Task<Event> GetEventsByIdAsync (uint id)
+        public async Task<Event> GetEventsById (uint id)
         {
             IQueryable<Event> query = _dataContext.Event.AsNoTracking();
 
-            query = query.OrderBy(e => e.IdEvent)
-                         .Where(e => e.IdEvent == id);
+            query = query.Where(e => e.IdEvent == id)
+                         .OrderBy(e => e.IdEvent);
 
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<Event[]> GetEventsByThemeAsync (string theme)
+        public async Task<Event[]> GetEventsByTheme (string theme)
         {
             IQueryable<Event> query = _dataContext.Event.AsNoTracking();
 
-            query = query.OrderBy(e => e.IdEvent)
-                         .Where(e => e.Theme.ToUpper().Contains(theme.ToUpper()));
+            query = query.Where(e => e.Theme.ToUpper().Contains(theme.ToUpper()))
+                         .OrderBy(e => e.IdEvent);
 
             return await query.ToArrayAsync();
         }

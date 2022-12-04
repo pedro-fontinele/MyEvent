@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "VBdJeZG3xXgQ8QE0Ljp9EAQUiYN5GNWvrwF0adto9gIlij/xQhshAoNSDs+9QI+DktvaQ7fhn9+K1KH8a2+ktw==",
+  "dgSpecHash": "0kD3947lBFrT/GKSD+xGop3bSQhRmctJmniOgI+qtC4L+3TSBtPk4c2Sbg9qkB3qLAxNRyvCFU7oDt76sxMfjg==",
   "success": true,
   "projectFilePath": "C:\\Desenvolvimento\\Desenvolvimento\\Projetos\\MyEvents\\02. Back-end\\src\\MyEvents.API\\MyEvents.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedro.holanda\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\pedro.holanda\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\pedro.holanda\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pedro.holanda\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.17\\microsoft.aspnetcore.jsonpatch.5.0.17.nupkg.sha512",
     "C:\\Users\\pedro.holanda\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.17\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.17.nupkg.sha512",
