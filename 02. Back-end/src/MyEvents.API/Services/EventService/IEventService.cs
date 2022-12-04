@@ -1,19 +1,19 @@
 ﻿using System.Threading.Tasks;
-using MyEvents.API.Domain.Entity.Model;
+using MyEvents.API.Domain.Entity.Dto;
 
 namespace MyEvents.API.Services
 {
     public interface IEventService
     {
         // Actions
-        Task<Event> InsertEventsAsync (Event eventModel);
-        Task<Event> UpdateEventsAsync (uint idEvent, Event eventModel);
-        Task<Event> DeleteEventsAsync (uint idEvent);
-        Task<Event> DeleteAllEventsAsync ();
+        Task<EventDto> InsertEvents (EventDto eventModel);
+        Task<EventDto> UpdateEvents (uint idEvent, EventDto eventModel);
+        Task<EventDto> DeleteEvents (uint idEvent);
+        Task<EventDto> DeleteAllEvents ();
 
         // Consult
-        Task<Event[]> GetAllEventsAsync();
-        Task<Event> GetEventsByIdAsync(uint idEvent);
-        Task<Event[]> GetEventsByThemeAsync(string theme);
+        Task<EventDto[]> GetAllEvents();
+        Task<EventDto> GetEventsById(uint idEvent);
+        Task<EventDto[]> GetEventsByTheme(string theme);
     }
 }

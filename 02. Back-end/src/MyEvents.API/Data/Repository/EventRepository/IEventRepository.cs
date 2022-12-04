@@ -6,15 +6,15 @@ namespace MyEvents.API.Data.Repository
     public interface IEventRepository
     {
         // Actions
-        Task InsertEventsAsync (Event eventModel);
-        Task UpdateEventsAsync (Event eventModel);
-        Task DeleteEventsAsync (Event eventModel);
-        Task DeleteAllEventsAsync (Event eventModel);
-        Task SaveChangesAsync ();
+        void InsertEvents (Event eventModel);
+        void UpdateEvents (Event eventModel);
+        void DeleteEvents (Event eventModel);
+        void DeleteAllEvents (Event eventModel);
+        void SaveChanges ();
 
         // Consult
-        Task<Event[]> GetAllEventsAsync ();
-        Task<Event> GetEventsByIdAsync (uint idEvent);
-        Task<Event[]> GetEventsByThemeAsync (string theme);
+        Task<Event[]> GetAllEvents ();
+        Task<Event> GetEventsById (uint idEvent);
+        Task<Event[]> GetEventsByTheme (string theme);
     }
 }
