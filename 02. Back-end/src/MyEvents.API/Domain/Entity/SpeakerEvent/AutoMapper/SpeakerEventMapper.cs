@@ -4,11 +4,11 @@ using MyEvents.API.Domain.Entity.Model;
 
 namespace MyEvents.API.Domain.Entity.AutoMapper
 {
-    public class EventMapper : Profile
+    public class SpeakerEventMapper : Profile
     {
-        public EventMapper()
+        public SpeakerEventMapper()
         {
-            CreateMap<Event, EventDto>().ReverseMap();
+            CreateMap<SpeakerEvent, SpeakerEventDto>().ReverseMap();
         }
     }
 }

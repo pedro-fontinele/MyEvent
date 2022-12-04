@@ -33,6 +33,10 @@ namespace MyEvents.API
                     .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             #endregion
 
+            #region FluentValidation
+            services.AddFluentValidationConfiguration();
+            #endregion
+
             #region Cors
             services.AddCors();
             #endregion
