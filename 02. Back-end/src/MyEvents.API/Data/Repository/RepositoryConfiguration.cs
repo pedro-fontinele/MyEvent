@@ -7,6 +7,7 @@ namespace MyEvents.API.Data.Repository
         public static void AddRepositoryConfiguration(this IServiceCollection services)
         {
             services.AddTransient<IEventRepository, EventRepository>();
+            services.AddTransient<IBatchRepository, BatchRepository>();
         }
     }
 }
