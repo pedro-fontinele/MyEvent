@@ -17,10 +17,10 @@
           <div *ngIf="form.get('local')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>
         </div>
         <div class="form-group col-md-4">
-          <label>{{eventTableFields.dateEvent}}</label>
-          <input type="date" class="form-control is-invalid" [ngClass]="{'is-invalid' : form.get('dateEvent')?.errors && form.get('dateEvent')?.touched}" formControlName="dateEvent" placeholder="Inform the date of event">
-          <div *ngIf="form.get('dateEvent')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
-          <div *ngIf="form.get('dateEvent')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>
+          <label>{{eventTableFields.eventDate}}</label>
+          <input type="text" class="form-control is-invalid" bsDatepicker [bsConfig]="configurationDatePicker()" [ngClass]="{'is-invalid' : form.get('eventDate')?.errors && form.get('eventDate')?.touched}" formControlName="eventDate" placeholder="Inform the date of event">
+          <div *ngIf="form.get('eventDate')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+          <div *ngIf="form.get('eventDate')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>
         </div>
       </div>
       <div class="form-row">
@@ -52,7 +52,7 @@
     <div class="card-footer">
       <div class="d-flex">
         <button class="btn btn-outline-secondary mr-auto border" (click)="cancelFrom()">{{cancelButton}}</button>
-        <button class="btn btn-success" [disabled]="!form.valid"><span class="spinner-border spinner-border-sm mr-1"></span>{{doneButton}}</button>
+        <button class="btn btn-success" [disabled]="!form.valid" (click)="saveRecord()"><span class="spinner-border spinner-border-sm mr-1"></span>{{doneButton}}</button>
       </div>
     </div>
   </form>

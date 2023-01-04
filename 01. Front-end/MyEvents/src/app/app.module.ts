@@ -29,6 +29,12 @@ import { PorfileTitleComponent } from './component/application/user/profile/porf
 import { PorfileFormComponent } from './component/application/user/profile/porfile-form/porfile-form.component';
 import { DateFormatPipe } from './common/pipe/date-format/date-format-pipe/date-format.pipe';
 import { EventService } from './service/events/event.service';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { enGbLocale } from 'ngx-bootstrap/locale';
+
+
+defineLocale('en-us', enGbLocale);
 
 
 @NgModule({
@@ -61,6 +67,7 @@ import { EventService } from './service/events/event.service';
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     ToastrModule.forRoot({
           timeOut: 3000,
           positionClass: 'toast-bottom-right',

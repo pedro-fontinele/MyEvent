@@ -6,7 +6,8 @@ namespace MyEvents.API.Services
     {
         public static void AddServiceConfiguration(this IServiceCollection services)
         {
-            services.AddTransient<IEventService, EventService>();
+            services.AddScoped<IEventService, EventService>();
+            services.AddScoped<IBatchService, BatchService>();
         }
     }
 }

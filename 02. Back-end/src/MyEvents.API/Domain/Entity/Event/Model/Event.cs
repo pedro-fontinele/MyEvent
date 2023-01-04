@@ -9,7 +9,7 @@ namespace MyEvents.API.Domain.Entity.Model
         [Key]
         public uint IdEvent { get; set; }
         public string Local { get; set; }
-        public DateTime EventDate { get; set; }
+        public string EventDate { get; set; }
         public string Theme { get; set; }
         public uint NumberOfParticipants { get; set; }
         public string ImageUrl { get; set; }
