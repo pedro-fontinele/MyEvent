@@ -34,13 +34,13 @@ namespace MyEvents.API.Domain.Entity.Validator
                                  .NotEmpty().WithMessage(EventErrorMessage.EmailMustBeInformed)
                                  .MaximumLength(50).WithMessage(EventErrorMessage.ExceededNumberOfCharacters);
 
-            RuleFor(e => e.Batch).NotNull().WithMessage(EventErrorMessage.FieldCannotBeNull)
-                                 .NotEmpty().WithMessage(EventErrorMessage.BatchMustBeInformed);
+            //RuleFor(e => e.Batch).NotNull().WithMessage(EventErrorMessage.FieldCannotBeNull)
+            //                     .NotEmpty().WithMessage(EventErrorMessage.BatchMustBeInformed);
 
-            RuleFor(e => e.SocialNetwork).NotEmpty().WithMessage(EventErrorMessage.SocialNetworkMustBeInformed);
+            //RuleFor(e => e.SocialNetwork).NotEmpty().WithMessage(EventErrorMessage.SocialNetworkMustBeInformed);
 
-            RuleFor(e => e.SpeakerEvent).NotNull().WithMessage(EventErrorMessage.FieldCannotBeNull)
-                                        .NotEmpty().WithMessage(EventErrorMessage.SpeakerEventkMustBeInformed);
+            //RuleFor(e => e.SpeakerEvent).NotNull().WithMessage(EventErrorMessage.FieldCannotBeNull)
+            //                            .NotEmpty().WithMessage(EventErrorMessage.SpeakerEventkMustBeInformed);
         }
     }
 }

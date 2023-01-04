@@ -5,7 +5,7 @@ import { SocialNetwork } from "./social-network";
 export interface Event {
     idEvent: number;  
     local: string;
-    eventDate?: Date;
+    eventDate: string;
     theme: string;
     numberOfParticipants: number;
     batch: Batch[]; 

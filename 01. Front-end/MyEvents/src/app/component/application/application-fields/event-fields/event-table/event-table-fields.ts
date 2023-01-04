@@ -1,9 +1,9 @@
-export class eventTableFieldsFields  {
+export class EventTableFieldsFields  {
     idEvent: string = "IdEvent";
     viewImage: string = "View Image";
     hideImage: string = "Hide Image";
     theme: string = "Theme";
-    dateEvent: string = "Date Event";
+    eventDate: string = "Date Event";
     local: string = "Local";
     numberOfParticipants: string = "Number of Participants";
     batch: string = "Batch";

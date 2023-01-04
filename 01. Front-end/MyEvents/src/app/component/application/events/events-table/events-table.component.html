@@ -7,7 +7,7 @@
           <th class="d-none d-md-table-cell"><app-button-show-or-hide-image></app-button-show-or-hide-image></th>
           <th>{{eventTableFields.theme}}</th>
           <th class="d-none d-md-table-cell">{{eventTableFields.local}}</th>
-          <th>{{eventTableFields.dateEvent}}</th>
+          <th>{{eventTableFields.eventDate}}</th>
           <th class="d-none d-md-table-cell">{{eventTableFields.numberOfParticipants}}</th>
           <th class="d-none d-md-table-cell">{{eventTableFields.batch}}</th>
           <th>{{eventTableFields.options}}</th>
@@ -19,20 +19,13 @@
            <td class="d-none d-md-table-cell"><img [collapse]="!showImages" [isAnimated]="true" src={{sourceImages}}{{event.imageUrl}} alt="image-event" id="image-event"></td>
            <td>{{event.theme}}</td>
            <td class="d-none d-md-table-cell">{{event.local}}</td>
-           <td>{{event.eventDate | dateFormat}}</td>
+           <td>{{event.eventDate}}</td>
            <td class="d-none d-md-table-cell">{{event.numberOfParticipants}}</td>
            <td class="d-none d-md-table-cell">{{event.batch}}</td>
            <td>
-              <app-button-edit (click)="eventDetail(event.idEvent)"></app-button-edit>
-              <app-button-delete></app-button-delete>
+              <app-button-edit (click)="editEvents(event.idEvent)"></app-button-edit>
+              <app-button-delete (click)="deleteEvent(event.idEvent)"></app-button-delete>
            </td>
-        </tr>
-    </tbody>
-    <tbody *ngIf="events == null">
-        <tr>
-          <td colspan="8" class="text-center">
-             <h4>{{noDataFound}}</h4>
-          </td>
         </tr>
     </tbody>
   </table>
