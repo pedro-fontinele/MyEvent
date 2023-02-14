@@ -13,6 +13,9 @@ namespace MyEvents.API.Domain.Entity
             services.AddFluentValidationAutoValidation();
             services.AddScoped<IValidator<EventDto>, EventValidator>();
             services.AddScoped<IValidator<BatchDto>, BatchValidator>();
+            services.AddScoped<IValidator<SocialNetworkDto>, SocialNetworkValidator>();
+            services.AddScoped<IValidator<SpeakerDto>, SpeakerValidator>();
+            services.AddScoped<IValidator<SpeakerEventDto>, SpeakerEventValidator>();
         }
     }
 }

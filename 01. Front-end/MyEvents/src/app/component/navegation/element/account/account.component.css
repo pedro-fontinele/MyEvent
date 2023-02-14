@@ -1,0 +1,11 @@
+a {
+    cursor: pointer;
+}
+
+#suboption {
+    color: white;
+}
+
+#suboption:hover {
+    background-color:rgb(111, 111, 111);
+}

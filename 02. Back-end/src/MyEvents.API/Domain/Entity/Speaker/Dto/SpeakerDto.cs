@@ -10,7 +10,7 @@ namespace MyEvents.API.Domain.Entity.Dto
         public string ImageUrl { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
-        public IEnumerable<SocialNetworkDto> SocialNetworkDto { get; set; }
-        public IEnumerable<SpeakerEventDto> SpeakerEventDto { get; set; }
+        public IEnumerable<SocialNetworkDto> SocialNetwork { get; set; }
+        public IEnumerable<SpeakerEventDto> SpeakerEvent { get; set; }
     }
 }

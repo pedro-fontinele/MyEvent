@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using MyEvents.API.Data.Repository;
 using MyEvents.API.Domain.Entity.Dto;
 using MyEvents.API.Domain.Entity.Model;
@@ -11,100 +12,80 @@ namespace MyEvents.API.Services
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _imapper;
 
-        public EventService (IEventRepository eventRepository, IMapper imapper)
+        public EventService(IEventRepository eventRepository, IMapper imapper)
         {
             _eventRepository = eventRepository;
             _imapper = imapper;
         }
 
-        public async Task<EventDto[]> GetAllEvents ()
+        public async Task<List<EventDto>> GetAllEvents()
         {
             var returnedEvent = await _eventRepository.GetAllEvents();
-            var result = _imapper.Map<EventDto[]>(returnedEvent);
-            return result;
+            return _imapper.Map<List<EventDto>>(returnedEvent);
         }
 
-        public async Task<EventDto> GetEventsById (uint idEvent)
+        public async Task<EventDto> GetEventsById(uint idEvent)
         {
-            if (idEvent > 0)
-            {
-                var returnedEvent = await _eventRepository.GetEventsById(idEvent);
-                if (!string.IsNullOrEmpty(returnedEvent.ToString()))
-                {
-                    var result = _imapper.Map<EventDto>(returnedEvent);
-                    return result;
-                }
-                return null;
-            }
-            return null;
+            var returnedEvent = await _eventRepository.GetEventsById(idEvent);
+            return _imapper.Map<EventDto>(returnedEvent);
         }
 
-        public async Task<EventDto[]> GetEventsByTheme (string theme)
+        public async Task<List<EventDto>> GetEventsByTheme(string theme)
         {
             if (!string.IsNullOrEmpty(theme))
             {
                 var returnedEvent = await _eventRepository.GetEventsByTheme(theme);
-                var result = _imapper.Map<EventDto[]>(returnedEvent);
-                return result;
-            }               
+                return _imapper.Map<List<EventDto>>(returnedEvent);
+            }
             return null;
         }
 
-        public async Task<EventDto> InsertEvents (EventDto eventDto)
+        public async Task<EventDto> InsertEvents(EventDto eventDto)
         {
-            if (!string.IsNullOrEmpty(eventDto.ToString()))
+            if (eventDto != null)
             {
                 var eventMap = _imapper.Map<Event>(eventDto);
                 _eventRepository.InsertEvents(eventMap);
-
                 var returnedEvent = await _eventRepository.GetEventsById(eventMap.IdEvent);
-
-                var eventDtoMap = _imapper.Map<EventDto>(returnedEvent);
-                return eventDtoMap;
-            } 
+                return _imapper.Map<EventDto>(returnedEvent);
+            }
             return null;
         }
 
-        public async Task<EventDto> UpdateEvents (uint idEvent, EventDto eventDto)
+        public async Task<EventDto> UpdateEvents(uint idEvent, EventDto eventDto)
         {
-            if (!string.IsNullOrEmpty(eventDto.ToString()) && idEvent > 0) 
+            if (eventDto != null)
             {
                 var returnedEvent = await _eventRepository.GetEventsById(idEvent);
-                if (!string.IsNullOrEmpty(returnedEvent.ToString()))
+                if (returnedEvent != null)
                 {
                     var eventMap = _imapper.Map<Event>(eventDto);
                     _eventRepository.UpdateEvents(eventMap);
-                    var eventDtoMap = _imapper.Map<EventDto>(returnedEvent);
-                    return eventDtoMap;
                 }
-                return null;
+                return _imapper.Map<EventDto>(returnedEvent);
             }
             return null;
         }
 
-        public async Task<EventDto> DeleteEvents (uint idEvent)
+        public async Task<EventDto> DeleteEvents(uint idEvent)
         {
-            if (idEvent > 0)
+            var returnedEvent = await _eventRepository.GetEventsById(idEvent);
+            if (returnedEvent != null)
             {
-                var returnedEvent = await _eventRepository.GetEventsById(idEvent);
-                if (!string.IsNullOrEmpty(returnedEvent.ToString()))
-                {
-                    _eventRepository.DeleteEvents(returnedEvent);
-                }
+                _eventRepository.DeleteEvents(returnedEvent);
             }
             return null;
         }
 
-        public async Task<EventDto> DeleteAllEvents ()
+        public async Task<EventDto> DeleteAllEvents()
         {
             var returnedEvent = await _eventRepository.GetAllEvents();
-            if (!string.IsNullOrEmpty(returnedEvent.ToString()))
+            if (returnedEvent != null)
             {
                 foreach (var item in returnedEvent)
                 {
-                    _eventRepository.DeleteAllEvents(item);
+                    _eventRepository.DeleteEvents(item);
                 }
-                return null;
             }
             return null;
         }

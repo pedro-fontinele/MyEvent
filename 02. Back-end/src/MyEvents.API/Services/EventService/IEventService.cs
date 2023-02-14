@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using MyEvents.API.Domain.Entity.Dto;
 
 namespace MyEvents.API.Services
@@ -12,8 +13,8 @@ namespace MyEvents.API.Services
         Task<EventDto> DeleteAllEvents ();
 
         // Consult
-        Task<EventDto[]> GetAllEvents();
+        Task<List<EventDto>> GetAllEvents();
         Task<EventDto> GetEventsById(uint idEvent);
-        Task<EventDto[]> GetEventsByTheme(string theme);
+        Task<List<EventDto>> GetEventsByTheme(string theme);
     }
 }

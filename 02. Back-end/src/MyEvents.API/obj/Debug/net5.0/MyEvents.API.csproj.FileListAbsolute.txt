@@ -64,3 +64,4 @@ C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.A
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\FluentValidation.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
 C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Desenvolvimento\Desenvolvimento\Projetos\MyEvents\02. Back-end\src\MyEvents.API\obj\Debug\net5.0\MyEvents.API.csproj.AssemblyReference.cache

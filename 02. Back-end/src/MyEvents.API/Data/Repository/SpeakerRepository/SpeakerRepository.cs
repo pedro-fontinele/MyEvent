@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MyEvents.API.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using MyEvents.API.Domain.Entity.Model;
+using System.Collections.Generic;
 
 namespace MyEvents.API.Data.Repository
 {
@@ -40,13 +41,13 @@ namespace MyEvents.API.Data.Repository
             return await _dataContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<Speaker[]> GetAllSpeakerAsync()
+        public async Task<List<Speaker>> GetAllSpeakerAsync()
         {
             IQueryable<Speaker> query = _dataContext.Speaker.AsNoTracking();
 
             query = query.OrderBy(e => e.IdSpeaker);
 
-            return await query.ToArrayAsync();
+            return await query.ToListAsync();
         }
 
         public async Task<Speaker> GetSpeakerByIdAsync(uint id)
@@ -59,14 +60,14 @@ namespace MyEvents.API.Data.Repository
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<Speaker[]> GetSpeakerByNameAsync(string name)
+        public async Task<List<Speaker>> GetSpeakerByNameAsync(string name)
         {
             IQueryable<Speaker> query = _dataContext.Speaker.AsNoTracking();
 
             query = query.OrderBy(e => e.IdSpeaker)
                          .Where(e => e.Name.ToUpper().Contains(name.ToUpper()));
 
-            return await query.ToArrayAsync();
+            return await query.ToListAsync();
         }
     }
 }

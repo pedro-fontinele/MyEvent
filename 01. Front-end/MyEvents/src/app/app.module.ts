@@ -32,6 +32,8 @@ import { EventService } from './service/events/event.service';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { enGbLocale } from 'ngx-bootstrap/locale';
+import { DashboardComponent } from './component/application/dashboard/dashboard.component';
+import { ContactsComponent } from './component/application/contacts/contacts.component';
 
 
 defineLocale('en-us', enGbLocale);
@@ -42,7 +44,7 @@ defineLocale('en-us', enGbLocale);
     AppComponent,
     EventsComponent,
     SpeakersComponent,
-    NavBarComponent,
+    DashboardComponent,
     DateFormatPipe,
     AccountComponent,
     EventsTableComponent,
@@ -57,7 +59,9 @@ defineLocale('en-us', enGbLocale);
     RegistrationComponent,
     PorfileTitleComponent,
     PorfileFormComponent,
-    ProfileComponent
+    ProfileComponent,
+    NavBarComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

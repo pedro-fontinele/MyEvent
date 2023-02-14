@@ -26,11 +26,7 @@ export class NavBarComponent implements OnInit {
   routerEvents(): void {
     this.router.navigate(['/events/list']);
   }
-
-  shouldShowNavbar(): boolean{
-    return this.router.url !== '/user/login';
-  }
-
+  
   routerSpeakers(): void {
     this.router.navigate(['/speakers']);
   }

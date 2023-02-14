@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Collections.Generic;
 using MyEvents.API.Domain.Entity.Model;
 
 namespace MyEvents.API.Data.Repository
@@ -9,12 +10,10 @@ namespace MyEvents.API.Data.Repository
         void InsertEvents (Event eventModel);
         void UpdateEvents (Event eventModel);
         void DeleteEvents (Event eventModel);
-        void DeleteAllEvents (Event eventModel);
-        void SaveChanges ();
 
         // Consult
-        Task<Event[]> GetAllEvents ();
+        Task<List<Event>> GetAllEvents ();
         Task<Event> GetEventsById (uint idEvent);
-        Task<Event[]> GetEventsByTheme (string theme);
+        Task<List<Event>> GetEventsByTheme (string theme);
     }
 }

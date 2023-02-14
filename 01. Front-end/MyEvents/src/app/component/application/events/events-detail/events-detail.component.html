@@ -31,19 +31,19 @@
           <div *ngIf="form.get('numberOfParticipants')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div>                    
         </div>
         <div class="form-group col-md-4">
-          <label>Telephone</label>
+          <label>{{eventTableFields.telephone}}</label>
           <input type="number" min="0" step="1" class="form-control is-invalid" [ngClass]="{'is-invalid' : form.get('telephone')?.errors && form.get('telephone')?.touched}" formControlName="telephone" placeholder="(11) 99999-9999">
           <div *ngIf="form.get('telephone')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
           <div *ngIf="form.get('telephone')?.hasError('maxlength')" class="invalid-feedback">{{exceededNumberOfCharacters}}</div> 
         </div>
         <div class="form-group col-md-6">
-          <label>Email</label>
+          <label>{{eventTableFields.email}}</label>
           <input type="email" class="form-control is-invalid" [ngClass]="{'is-invalid' : form.get('email')?.errors && form.get('email')?.touched}" formControlName="email" placeholder="Inform the e-mail">
           <div *ngIf="form.get('email')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
           <div *ngIf="form.get('email')?.hasError('email')" class="invalid-feedback">{{emailNotValidated}}</div> 
         </div>
         <div class="form-group col-md-12">
-          <label>Image</label>
+          <label>{{eventTableFields.image}}</label>
           <input type="text" class="form-control is-invalid" [ngClass]="{'is-invalid' : form.get('imageUrl')?.errors && form.get('imageUrl')?.touched}" formControlName="imageUrl" placeholder="Inform the image Url">
           <div *ngIf="form.get('imageUrl')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
         </div>
@@ -51,9 +51,67 @@
     </div>
     <div class="card-footer">
       <div class="d-flex">
-        <button class="btn btn-outline-secondary mr-auto border" (click)="cancelFrom()">{{cancelButton}}</button>
-        <button class="btn btn-success" [disabled]="!form.valid" (click)="saveRecord()"><span class="spinner-border spinner-border-sm mr-1"></span>{{doneButton}}</button>
+        <button class="btn btn-outline-secondary mr-auto border" (click)="cancelFromEvent()">{{cancelButton}}</button>
+        <button class="btn btn-success" [disabled]="!form.valid" (click)="saveEventRecord()"><span class="spinner-border spinner-border-sm mr-1"></span>{{doneButton}}</button>
       </div>
     </div>
   </form>
+</div>
+<div *ngIf="eventExists" class="card rounded shadow-sm mt-4">
+  <div class="p-3">
+    <div class="d-flex border-bottom">
+      <h2 class="mr-auto">{{batchDetailFields.batch}}</h2>
+      <h2><i class="fas fa-money-bill-wave"></i></h2>
+    </div>
+    <p>{{batchDetailFields.clickInNewToAdd}}</p>
+    <div class="form-row p-1">
+      <div [formGroup]="form" class="col">
+        <div formArrayName="batchs" *ngFor="let batchs of batchs.controls; let i=index">
+          <fieldset [formGroupName]="i" class="form-group">
+            <legend class="d-flex justify-content-between capitalize">
+              <button class="p-2 btn btn-sm btn-outline-warning mb-1 d-flex" tooltip="Delete Batch" placement="left">
+              <i class="fa fa-window-close my-1"></i>
+              <b class="ml-1 d-none d-sm-block">{{deleteButton}}</b>
+            </button>
+          </legend>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label>{{batchDetailFields.name}}</label>
+              <input type="text" class="form-control" [ngClass]="{'is-invalid': batchs.get('name')?.errors && batchs.get('name')?.touched}" formControlName="name" placeholder="Name">
+              <div *ngIf="batchs.get('name')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+            </div>
+            <div class="form-group col-md-4">
+              <label>{{batchDetailFields.theAmount}}</label>
+              <input type="text" class="form-control" [ngClass]="{'is-invalid': batchs.get('theAmount')?.errors && batchs.get('theAmount')?.touched}" formControlName="theAmount" placeholder="000">
+              <div *ngIf="batchs.get('theAmount')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+            </div>
+            <div class="form-group col-md-4">
+              <label>{{batchDetailFields.price}}</label>
+              <input type="text" currencyMask class="form-control" [ngClass]="{'is-invalid': batchs.get('price')?.errors && batchs.get('price')?.touched}" formControlName="price" placeholder="R$ 0,00">
+              <div *ngIf="batchs.get('price')?.hasError('required')" class="invalid-feedback">{{fieldIsRequired}}</div>
+            </div>
+            <div class="form-group col-md-4">
+              <label>{{batchDetailFields.startDate}}</label>
+              <input type="text" class="form-control" formControlName="startDate" placeholder="01/01/2019">
+            </div>
+            <div class="form-group col-md-4">
+              <label>{{batchDetailFields.endDate}}</label>
+              <input type="text" class="form-control" formControlName="endDate" placeholder="01/01/2026">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <button (click)="addBatch()" class="d-flex btn btn-outline-primary">
+    <i class="fa fa-plus-circle my-1"></i>
+    <b class="ml-1">{{newButton}}</b>
+  </button>
+ </div>
+  <div class="card-footer">
+    <div class="d-flex">
+      <button class="btn btn-outline-secondary mr-auto border" (click)="cancelFromBatch()">{{cancelButton}}</button>
+      <button class="btn btn-success" (click)="saveBatchRecord()">{{doneButton}}</button>
+    </div>
+  </div>
 </div>

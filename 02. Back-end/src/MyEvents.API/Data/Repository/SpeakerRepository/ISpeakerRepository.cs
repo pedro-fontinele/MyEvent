@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Collections.Generic;
 using MyEvents.API.Domain.Entity.Model;
 
 namespace MyEvents.API.Data.Repository
@@ -11,8 +12,8 @@ namespace MyEvents.API.Data.Repository
         void DeleteRange<T>(T Entity) where T : class;
         Task<bool> SaveChangesAsync();
 
-        Task<Speaker[]> GetAllSpeakerAsync();
+        Task<List<Speaker>> GetAllSpeakerAsync();
         Task<Speaker> GetSpeakerByIdAsync(uint id);
-        Task<Speaker[]> GetSpeakerByNameAsync(string name);
+        Task<List<Speaker>> GetSpeakerByNameAsync(string name);
     }
 }

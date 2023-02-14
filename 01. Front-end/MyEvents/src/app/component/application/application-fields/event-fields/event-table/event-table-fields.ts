@@ -8,4 +8,7 @@ export class EventTableFieldsFields  {
     numberOfParticipants: string = "Number of Participants";
     batch: string = "Batch";
     options: string = "Options";
+    telephone: string = "Telephone";
+    email: string = "Email";
+    image: string = "Image";
 }

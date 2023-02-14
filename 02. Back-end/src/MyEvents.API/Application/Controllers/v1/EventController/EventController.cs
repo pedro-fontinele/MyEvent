@@ -25,35 +25,35 @@ namespace MyEvents.API.Application.Controllers.v1
         }
 
         [HttpGet("id/{idEvent}")]
-        public async Task<IActionResult> Get (uint idEvent)
+        public async Task<IActionResult> Get ([FromRoute] uint idEvent)
         {
             var returnedEvent = await _eventService.GetEventsById(idEvent);
             return Ok(returnedEvent);
         }
 
         [HttpGet("theme/{theme}")]
-        public async Task<IActionResult> Get (string theme)
+        public async Task<IActionResult> Get ([FromRoute] string theme)
         {
             var returnedEvent = await _eventService.GetEventsByTheme(theme);
             return Ok(returnedEvent);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post (EventDto eventModel)
+        public async Task<IActionResult> Post ([FromBody] EventDto eventModel)
         {
             var returnedEvent = await _eventService.InsertEvents(eventModel);
             return Ok(returnedEvent);
         }
 
         [HttpPut("id/{idEvent}")]
-        public async Task<IActionResult> Put (uint idEvent, EventDto eventModel)
+        public async Task<IActionResult> Put ([FromRoute] uint idEvent, [FromBody] EventDto eventModel)
         {
             var returnedEvent = await _eventService.UpdateEvents(idEvent, eventModel);
             return Ok(returnedEvent);
         }
 
         [HttpDelete("id/{idEvent}")]
-        public async Task<IActionResult> Delete (uint idEvent)
+        public async Task<IActionResult> Delete ([FromRoute] uint idEvent)
         {
             var returnedEvent = await _eventService.DeleteEvents(idEvent);
             return Ok(returnedEvent);

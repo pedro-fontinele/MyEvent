@@ -3,8 +3,8 @@
     public class SpeakerEventDto
     {
         public uint IdSpeaker { get; set; }
-        public SpeakerDto SpeakerDto { get; set; }
+        public SpeakerDto Speaker { get; set; }
         public uint IdEvent { get; set; }
-        public EventDto EventDto { get; set; }
+        public EventDto Event { get; set; }
     }
 }
